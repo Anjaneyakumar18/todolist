@@ -1,67 +1,172 @@
+/* General styles (applies to all screen sizes) */
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(219, 173, 219);
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background: linear-gradient(to right, #f8b6e4, #f2f6a9);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-h1 {
+
+header {
     text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
     color: #333;
+    font-size: 2.5rem;
 }
-#todo-container {
-    max-width: 400px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 5px;
-}
-input[type="text"] {
-    width: calc(100%);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
-button {
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    padding: 10px;
-    background: #28a745;
-    border: none;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
+    margin: auto;
 }
-button:hover {
+
+#todo-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+#add-button {
+    width: 25%;
+    margin-left: 5%;
+    padding: 10px;
+    font-size: 1rem;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#add-button:hover {
     background: #218838;
 }
+
 ul {
-    list-style-type: none;
+    margin-top: 20px;
     padding: 0;
+    list-style: none;
 }
+
 li {
-    background: #fff;
-    padding: 10px;
-    margin: 5px 0;
+    background: #f8f9fa;
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 3px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
 .delete {
     background: #dc3545;
-    border: none;
     color: white;
-    text-align: center;
-    padding: 5px; 
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 3px;
-    width: 50px; 
-    text-align: center;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .delete:hover {
     background: #c82333;
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+/* Media queries */
+
+/* Small devices (max-width: 768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    #todo-container {
+        width: 100%;
+        padding: 15px;
+    }
+    input[type="text"] {
+        width: 65%;
+        font-size: 0.9rem;
+    }
+    #add-button {
+        width: 30%;
+        font-size: 0.9rem;
+    }
+    li {
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    #todo-container {
+        padding: 10px;
+    }
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #add-button {
+        width: 100%;
+        margin: 0;
+    }
+    li {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    .delete {
+        width: 20px;
+        height: 20px;
+        font-size: 0.8rem;
+    }
 }

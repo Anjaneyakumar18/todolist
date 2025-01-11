@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do-List</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>Enhanced To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./icon.png">
 </head>
 <body>
-    <h1>To-Do List</h1>
-    <div id="todo-container">
-        <input type="text" id="todo-input" placeholder="Add a new task...">
-        <button onclick="addTodo()">Add</button>
-        <ul id="todo-list"></ul>
+    <div id="app-container">
+        <header>
+            <h1>My To-Do List</h1>
+        </header>
+        <div id="todo-container">
+            <input type="text" id="todo-input" placeholder="Add a new task...">
+            <button id="add-button" onclick="addTodo()">Add Task</button>
+            <ul id="todo-list"></ul>
+        </div>
     </div>
+    <footer>
+        <p>&copy; 2025 My To-Do App</p>
+    </footer>
+    <script src="index.js"></script>
 </body>
-<script src="./index.js"></script>
 </html>
